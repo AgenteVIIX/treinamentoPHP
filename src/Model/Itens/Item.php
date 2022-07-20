@@ -18,7 +18,7 @@ class Item
         $this->type = $type;
     }
 
-    protected function getName() {
+    public function getName() {
         return $this->name;
     }
 }

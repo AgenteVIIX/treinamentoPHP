@@ -17,30 +17,16 @@ class Character
         $this->class = $class;
     }
 
-
-    public function addItem(Item $item)
-    {
-        array_push($this->inventary, $item);
-    }
-
-    public function removeItem(string $item)
-    {
-        for($i = 0; $i > count($this->inventary); $i++) {
-            $comp = $strcmp($this->inventary[$i], $item); 
-            if ($comp == 0) {
-                unset($this->inventary[$i]);
-            } else {
-
-            } 
-        }
-    }
-
     public function getName() {
         return $this->name;
     }
 
     public function getInventary() {
         return $this->inventary;
+    }
+
+    public function setInventary(array $inventary){
+        $this->inventary = $inventary;
     }
 
     public function getClass() {

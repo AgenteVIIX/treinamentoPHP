@@ -2,7 +2,6 @@
 namespace root\InventaryManager\Model\Classes;
 
 abstract class Classe {
-    protected $name;
 
     abstract function savingThrow1();
 

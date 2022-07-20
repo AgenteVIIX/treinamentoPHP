@@ -10,6 +10,7 @@ use root\InventaryManager\Model\Itens\Armor;
 use root\InventaryManager\Model\Classes\Character;
 use root\InventaryManager\Model\Classes\Classe;
 use root\InventaryManager\Model\Classes\Rogue;
+use root\InventaryManager\Services\InventaryController;
 
 
 //string $name, string $description, float $weight, string $rarity, string $type, array $damageDice, int $bonus
@@ -26,8 +27,10 @@ $gaspard = new Character('Gaspard Ravenclaw', $gaspardInventary, new Rogue());
 //creating a new Item
 $silverLycanChime = new Item('Silver Lycan Chime', 'A wolf format amulet who can detect shapeshifters', 0.2, 'Incommon', 'Woundrous');
 
-//push the new item in the inventary
-$gaspard->addItem($silverLycanChime);
+$controller = new InventaryController();
+$controller->addItem($gaspard->getInventary(), $gaspard,  $silverLycanChime);
+$controller->showInventary($gaspard);
+//$controller->removeItem($gaspard, 'Silver Lycan Chime');
 
 //priting some infos of a character
 echo $gaspard->getName() . ' - ' . $gaspard->getClass()
